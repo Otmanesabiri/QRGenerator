@@ -1,0 +1,12 @@
+{
+  "name": "qr-api",
+  "version": "1.0.0",
+  "description": "Backend API for QRGenerator (Node.js/Express)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
