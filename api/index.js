@@ -20,12 +20,17 @@ const sqlConfig = {
 };
 
 // Example API route
-app.get('/api/ping', (req, res) => {
+app.get('/ping', (req, res) => {
   res.json({ message: 'pong' });
 });
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('QRGenerator API is running. Use /api/ping or /api/test-sql.');
+});
+
 // Test Azure SQL connection
-app.get('/api/test-sql', async (req, res) => {
+app.get('/test-sql', async (req, res) => {
   try {
     await sql.connect(sqlConfig);
     const result = await sql.query`SELECT TOP 1 name FROM sys.tables`;
